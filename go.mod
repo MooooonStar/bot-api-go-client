@@ -9,5 +9,5 @@ require (
 	github.com/gofrs/uuid v3.2.0+incompatible
 	github.com/gorilla/websocket v1.4.1
 	github.com/shopspring/decimal v0.0.0-20191009025716-f1972eb1d1f5 // indirect
-	github.com/stretchr/testify v1.4.0 // indirect
+	github.com/stretchr/testify v1.4.0
 )
