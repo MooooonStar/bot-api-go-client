@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/MixinNetwork/bot-api-go-client"
+	"github.com/MooooonStar/bot-api-go-client"
 	"github.com/MixinNetwork/go-number"
 	"gopkg.in/urfave/cli.v1"
 )
