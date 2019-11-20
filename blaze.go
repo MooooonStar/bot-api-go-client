@@ -206,6 +206,14 @@ func (b *BlazeClient) SendAppButton(ctx context.Context, conversationId, recipie
 	return nil
 }
 
+func (b *BlazeClient) SendRawMessage(ctx context.Context, params map[string]interface{}) error {
+	err := writeMessageAndWait(ctx, b.mc, createMessageAction, params)
+	if err != nil {
+		return BlazeServerError(ctx, err)
+	}
+	return nil
+}
+
 func connectMixinBlaze(uid, sid, key string) (*websocket.Conn, error) {
 	token, err := SignAuthenticationToken(uid, sid, key, "GET", "/", "")
 	if err != nil {
