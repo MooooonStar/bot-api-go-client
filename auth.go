@@ -22,6 +22,7 @@ func SignAuthenticationToken(uid, sid, privateKey, method, uri, body string) (st
 		"exp": expire.Unix(),
 		"jti": UuidNewV4().String(),
 		"sig": hex.EncodeToString(sum[:]),
+		"scp": "PROFILE:READ PROFILE:WRITE PHONE:READ PHONE:WRITE CONTACTS:READ CONTACTS:WRITE MESSAGES:READ MESSAGES:WRITE",
 	})
 
 	block, _ := pem.Decode([]byte(privateKey))

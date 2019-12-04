@@ -5,6 +5,15 @@ import (
 	"encoding/json"
 )
 
+func ReadAuthorizations(ctx context.Context, uid, sid, key string) ([]byte, error) {
+	method, uri := "GET", "/authorizations"
+	accessToken, err := SignAuthenticationToken(uid, sid, key, method, uri, "")
+	if err != nil {
+		return nil, err
+	}
+	return Request(ctx, method, uri, nil, accessToken)
+}
+
 func ReadAuthorization(ctx context.Context, id string, uid, sid, key string) ([]byte, error) {
 	method, uri := "GET", "/authorizations/"+id
 	accessToken, err := SignAuthenticationToken(uid, sid, key, method, uri, "")

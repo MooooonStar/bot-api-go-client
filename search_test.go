@@ -16,7 +16,7 @@ const (
 
 func TestSearch(t *testing.T) {
 	ctx := context.Background()
-	data, err := SearchUser(ctx, "38355322", uid, sid, key)
+	data, err := SearchUser(ctx, "38451826", uid, sid, key)
 	assert.Nil(t, err)
 	log.Println(string(data))
 
