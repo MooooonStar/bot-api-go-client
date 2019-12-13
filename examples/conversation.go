@@ -12,138 +12,54 @@ import (
 )
 
 const (
-	uid = "fce4a2bf-f239-44d0-a4ce-b7fd3ff02327"
-	sid = "db50b3d0-2303-4a3c-9ab3-b568556f9b63"
-	key = `-----BEGIN RSA PRIVATE KEY-----
-MIIEogIBAAKCAQEAqkQUTXCkCOEpUXB2H9wqL+D+S7eLxbglYW3NyAm1317PrNpZ
-njni7tP1BvrfSbQYJH9MJlVsFtF6zwiWLR4dgPHeZkcu+Tj5b1qtG7Wao0Z9NeQg
-/QnCxA/n0rVaHnO3XKNeKb2a3X0TAX3XkPwPDGGpSnZfeliD/Z3Dtl3zgnYbCD07
-QVl3efRLGtwPYG3I1pc/FDOMcrbAPnE4Dg7fe5UE+O/Ks1mwpyodel+Tp+Nj/dZP
-ENVdYvjXTGK7XUaD4GyyldpobR6WJ1mAbi2FRe1N+BSQq8bH8MVqFBxvYjiE1AvI
-n6D29M3fH6sWi+IkPn/BigPDiSEab9qsDpOqCwIDAQABAoIBAANQb0NmoDrFWeQ0
-7TJc5bv9hCr9zUxcSOtRk4IuS4pSh8up4GQHumwYV2+lrcz7IsaAbSoIhaHCvWzk
-POVvQvcXPiioKrjn1qsdN7tkreLkZLGKLujd/3AzjblN6w18BniuJroR777EnXxs
-8lI8ex/W6CWuki3eeos9k+lWgNPsPRcJvS74vfANzj2NMQpuZqLozBBdW10obMG/
-Vs5+XOmxW7kFDkmrCOTrV2VUxwB2Jdx+isJoCKdO9XqUKqpwJB7FKwvtBpMvNDeE
-5VdqLTGkBxzTk5ebgMOxz0CaouKGiJGC37psvwtWwbiWSZ0hgnUFPRs/cxYhqGG9
-5eDGqtECgYEA6n4d46hKyogqmKA6YyaFXeOZZfWOxGmMs94AsvWAUItmHqIeRqWZ
-Q4+Zf/sK4tQH7m0ccFeoihDwU7LotrB3dQbLMx7SHK3yUMCNZkpVfcgF/EOI1VKM
-1VcRS2gh/5znH/7knRR1YQ3Ic9LOZK3y7JldmKshkoCHPwkpD68kfakCgYEAueHr
-p/6dthU50WD93c2E7yJ3MpcZw9odJ7ORhVSGpnkxW7pEG+O+tTZJ2JAWFC7NR656
-vSdBe8Fr037sn77ooghl7tK6dy9lptp/8FYcRZr1Jg2kmVR1NQ1ygiAxqLszNMtd
-X1NrghXApBclKqipqg9Jd6PW0cuDE8ddd/tAspMCgYBHWWp0y88+AuKbIB3D74Oj
-Bs61FFuFbexPClzCFysc1t2SspdtvZN92CLHqzYrwIJNTMvbbwCsSe0mOojOlbEz
-XYbUnismaNMTORONLU8H/6W6lT38UqrheyWbAStfIHm+5YrgNMpmZpA4lcsRHVCO
-JzgwbNnBPvRn/LyOtibvSQKBgBFGoQtVC71fjacbF50ku8Up8+Ac0QU14V3OP6kf
-qQAR5Xd8AVaCPThEWmqpQZQQoX2XBstLubdRy761XjKeoKpmk2q15SSsoAr45ckl
-h60kcMJfpDun8NjEbi8P5O2ksGaou/3fF+/YK7ZUfFzRniszDoXzEUUgYAdXkSVU
-kbfHAoGAMsVPZhb9JPpM54QVw7MaB2NC1hGULz22IjUf1MO+c4Fhg1UC7wSmid6B
-jJ495odSDwF0j64Ks3e/+rQR8FxRBp0h0Hd2WYvslLgahcNq182swRntsuEwoBcp
-eRPtBuVbwq6VphDHvVHuD85IOanZhiHH0qXlWrIUXBpGZGkZjow=
------END RSA PRIVATE KEY-----`
+	snow = "7b3f0a95-3ee9-4c1b-8ae9-170e3877d909"
+	uid  = "e89acc53-6a5b-407f-8558-d574e82e5922"
+	sid  = "981b9559-dbcd-4606-beb8-74e70168daf3"
+	key  = "-----BEGIN RSA PRIVATE KEY-----\r\nMIICXAIBAAKBgQCLNAuQpGpyAWmZhh4Rj2WIrkdUhSFUzXLb9laBQO5lN1bWA7de\r\nib8h9NeoNIN09CkOjuoX37qHKJ4eu74gAg2qPxWBBfZqfbV+F1fWfNZhjK0KZs+4\r\nwod7hiCZBHagSeb4xk2IKuoCq6T9gNUnSDcyZRlryXh5wpmKW0+tLue5YwIDAQAB\r\nAoGAQTOiiyCH/1hsBw4L/XumOkwvewZUo20L9L3ArRAl2eD+2oWpGS36CcSuUsou\r\nHNTUek40lfQkYXSEA686kbGEhlxiToQImBmXURweocRj/avL4U9T+914vLxyD24H\r\nhCmoy8C8WZThUVvxdpdhittgI4frOaHoSdxtBxtMfTByhHkCQQDXOFlc9q/F+gEc\r\nJtyH5r4fw+Dj82CfTnC9g+DOIjTjXgKqbM3OuNMWA/Y2fv0etJpL/CcOl/yONZPy\r\nVXD7rFiXAkEApZRcDgx2eTC+wpnhgUSmyb4Lr+Z7zVp/r7H6a1yQ0ZlNse5V5C2Z\r\nDY256sWyOztVTlKnYtYu7GVViXJjQUDTFQJAEYebb8EADCYS1RItQDyBG+E+fhKi\r\nuhcPg8AsHV4X5LURjoQSN1ZCizaDZWjugQPA1ZOSMtQaVBL1G/Xtn/InvQJBAJiR\r\nan0baLLkgnFHXy1Ad7qenaA37M1cXRkkEo2InnwzGQ8hgA0fIs8FT1EPVtoTIthn\r\neoqstlHmUXmzZ9eBhr0CQC/qADQI/tPJrMh9q5GZorEKO69kGrljgdBOPPJbg8ye\r\ny6bq+WKGaH0sRmVzFzYTSe0O+M3hXD3qYZIAe9/V+sI=\r\n-----END RSA PRIVATE KEY-----\r\n"
 )
 
-// const (
-// 	cat  = "14521f6b-2619-41ba-89ff-d440330cbde0"
-// 	snow = "7b3f0a95-3ee9-4c1b-8ae9-170e3877d909"
-// 	uid  = "fce4a2bf-f239-44d0-a4ce-b7fd3ff02327"
-// 	sid  = "36250dc4-f987-4eae-a986-760f7d8e57dc"
-// 	key  = `-----BEGIN RSA PRIVATE KEY-----
-// MIICXAIBAAKBgQDAgWryZroTizbqJcZ3P07/ho0pW5FbnsGn9tFDdFnZZFbs0VLy
-// hHAkfPdrYYHXEGDYEnNg4sZ8bd7weNwFlLhsGkV5Dn6b0XkW11X8Unp240uVf3fm
-// TpX899yFoGcfaXB0LoxdMSn8jABFDtDkFaTdQ4bmilrem7jVR57VRiFaxQIDAQAB
-// AoGABHVK0oPOBeNYuXn3+22AKRtG3CEWf/JwhjEJXiBM72OrPq9HVj36ceHiAf7f
-// WKl0sLRWrzT5R0rtGZEW+VsdHTt/sNIq/vIdsM1qyJfKaHIk+P/7rB6sxUHhZmjm
-// Rr8RlGWD7fg/yPerzvhF+c5kT3ihJUbETg9V/tIjINYjRgECQQDp1TwhljhShZzh
-// RYfSONKTwKTLmGwd10Q4OFtfLdkKU2C2i064vDgKUhsy35NdfTZEU4FNLtqh+aFR
-// hDiNPajFAkEA0sE696Y1WHidEZXUa4J/fU70FWC0Ml2pwOwDEpjYK9309ytE1iqv
-// OCKw81rY/Ec3hAJezVRbaFfoaqn8m9wKAQJAYtqM0z4ojWqDChFU/CCdlW0pvhCw
-// FGV/J61bo39EdEMPbdyy6RJZNrPDX9x49lsK6BPNZA3czAE2m7mkFsHsaQJBAKWo
-// 0Wr8MI5cMEo0VYY0S3X5644qNzonuVk1qqyhi7nfe8AVOMSHRLeBPUnsLQcQC6ku
-// G8qV9kusXboJ58+zRAECQFJrp9GDK1JtjxnpbtjwGEThygbVWfd8guuuKz2rDDdP
-// XPFRmZlYqdGSGvi87iEKqaite3rHZKyMZWKFxZZLaNc=
-// -----END RSA PRIVATE KEY-----`
-// )
+type Listener struct{}
+
+func (l *Listener) OnMessage(ctx context.Context, msgView bot.MessageView, userID string) error {
+	bt, _ := json.Marshal(msgView)
+	log.Println("On message ", string(bt))
+	return nil
+}
 
 func main() {
 	ctx := context.Background()
+	l := &Listener{}
+	id := bot.UniqueConversationId(snow, uid)
 
-	// auth, err := bot.ReadAuthorization(ctx, "2c2753af-4c2e-41d9-8c5f-9f1915c951c9", uid, sid, key)
-	// if err != nil {
-	// 	log.Fatal(err)
-	// }
-	// log.Println(string(auth))
-	// ctx := context.Background()
-	// user, err := bot.SearchUser(ctx, "7000102353", uid, sid, key)
-	// if err != nil {
-	// 	log.Fatal(err)
-	// }
-	// log.Println(string(user))
-	// id := "8f873526-c131-4e84-985f-524f95319add"
-	// someone := "7b3f0a95-3ee9-4c1b-8ae9-170e3877d909"
-
-	// req := bot.ParticipantRequest{UserId: someone}
-	// _, err := bot.ManageParticipants(ctx, id, "ADD", []*bot.ParticipantRequest{&req}, uid, sid, key)
-	// if err != nil {
-	// 	log.Fatal(err)
-	// }
-	// _, err = bot.ManageParticipants(ctx, id, "REMOVE", []*bot.ParticipantRequest{&req}, uid, sid, key)
-	// if err != nil {
-	// 	log.Fatal(err)
-	// }
-
-	// bot.ConversationShow(ctx)
-	// accessToken, err := bot.SignAuthenticationToken(uid, sid, key, "GET", "/assets", "")
-	// if err != nil {
-	// 	log.Fatal(err)
-	// }
-	// assets, err := bot.AssetList(ctx, accessToken)
-	// if err != nil {
-	// 	log.Fatal(err)
-	// }
-	// log.Println(assets)
-
-	// authorizations, err := bot.ReadAuthorizations(ctx, uid, sid, key)
-	// if err != nil {
-	// 	log.Fatal(err)
-	// }
-	// log.Println(string(authorizations))
-	// attachment, err := bot.AttachemntShow(ctx, uid, sid, key, "0839a7c6-2b7a-47ec-85d0-cc80c0164421")
-	// if err != nil {
-	// 	log.Fatal(err)
-	// }
-	// bt, _ := json.Marshal(attachment)
-	// log.Println(string(bt))
-
-	// ids := []string{"e89acc53-6a5b-407f-8558-d574e82e5922", "2b9a8b76-80a6-4cd3-a586-1c33ff2cbd11", "7b3f0a95-3ee9-4c1b-8ae9-170e3877d909"}
-	// data, err := bot.FetchUsers(ctx, ids, uid, sid, key)
-	// if err != nil {
-	// 	log.Fatal(err)
-	// }
-	// log.Println(":", string(data))
-
-	// id := "29890426-64b6-4588-aac6-432ce6b1e52c"
-	// accessToken, err := bot.SignAuthenticationToken(uid, sid, key, "GET", "/conversations/"+id, "")
-	// if err != nil {
-	// 	log.Fatal(err)
-	// }
-	// conversation, err := bot.ConversationShow(ctx, id, accessToken)
-	// if err != nil {
-	// 	log.Fatal(err)
-	// }
-	// bt, _ := json.Marshal(conversation)
-	// log.Println(string(bt))
-
-	// ctx := context.Background()
-	accessToken, err := bot.SignAuthenticationToken(uid, sid, key, "GET", "/me", "")
-	if err != nil {
-		log.Fatal(err)
+	var client *bot.BlazeClient
+	go func() {
+		for {
+			client = bot.NewBlazeClient(uid, sid, key)
+			if err := client.Loop(ctx, l); err != nil {
+				log.Println("LOOP ERROR: ", err)
+			}
+		}
+	}()
+	time.Sleep(3 * time.Second)
+	log.Println("I am here.")
+	btns, _ := json.Marshal(map[string]interface{}{
+		"title":       "hello",
+		"action":      "www.google.cn",
+		"description": "",
+		"icon_url":    "https://gss0.baidu.com/-4o3dSag_xI4khGko9WTAnF6hhy/zhidao/pic/item/5243fbf2b2119313ac02f75c69380cd790238d9c.jpg",
+	})
+	params := map[string]interface{}{
+		"conversation_id": id,
+		"recipient_id":    snow,
+		"message_id":      bot.UuidNewV4().String(),
+		"category":        "APP_CARD",
+		"data":            base64.StdEncoding.EncodeToString(btns),
 	}
-	assets, err := bot.Request(ctx, "GET", "/me", nil, accessToken)
-	if err != nil {
-		log.Fatal(err)
+	for {
+		err := client.SendRawMessage(ctx, params)
+		log.Println("Send raw message error: ", err)
+		time.Sleep(2 * time.Second)
 	}
-	log.Println(string(assets))
 }
 
 func talk() {
@@ -174,12 +90,4 @@ func talk() {
 		time.Sleep(1 * time.Second)
 		log.Println("I am here.", err)
 	}
-}
-
-type Listener struct{}
-
-func (l *Listener) OnMessage(ctx context.Context, msg bot.MessageView, userId string) error {
-	bt, _ := json.Marshal(msg)
-	log.Println("message: ", string(bt))
-	return nil
 }

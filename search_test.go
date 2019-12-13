@@ -8,15 +8,15 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
-const (
-	uid = "e89acc53-6a5b-407f-8558-d574e82e5922"
-	sid = "1cff82d1-5873-488b-b210-b25421db7ccb"
-	key = "-----BEGIN RSA PRIVATE KEY-----\r\nMIICXQIBAAKBgQC529vlrNBDpxAvBFRp/PyydQaA67P6jfK2CmaRcj2jAjIM34sT\r\nee0ufQFE6AjfuYGE1rzH82FzygUBFs9Ag2ZJrYjQyITi89aVDI2k9O29z+Xc3Ss7\r\nOK46Y/O7QRuJNFL9GL3nOE9sVEZMfZ9GojgmUEVvge6GTi8391iEclTf4wIDAQAB\r\nAoGBAJRYVOK0FaL59GPiq9HQ+I0j9OXvu76vj9sW4BkVOvch6Hr37hTEi7hAVEQA\r\nhBy1/xfdId7idpUp2OauowuWFYw6LtfG/CaFgVI0u0fip9z3LZ2gMpAAtJG29Hs2\r\nv7LFfHwRFjHy8guIWVrqev1i5YSaRe4Nn64IRzdBwhzfLMIpAkEA6YbDR1iQlowi\r\nhRFdBOSJJOr0aS55Y1Ja52wpofupQOP/lXYB+2EdUtHPKaju0GutXcLqcmhdQLFR\r\nImFoWPg43wJBAMu+va3xmeHOaRVk7wJYewOUAgFrANKezl1b1xS3xaeSCxOALl5I\r\nk3YBjsQeUV6q/r2I3Z1h+dDpp7HQlgbTRX0CQAodu2Hg1UqgQXKQQP5QRBykTPgt\r\nejayP5vc1KTeuQNFnTHFTeqs109aJWZBmi7PK1BvfCZ+nOOLit85ZwLLpfMCQCg0\r\nJzGfrwHDvTCfjhokY4G9PvgQqUTmWUpKyRIpgTMjulPKw1uPbqmmfQluAhhwHXxA\r\n+ZoIr0buFE0eH7yRC/ECQQDXKRJodBt/VIlB33N6w/qXtusb8zMKdWlNLdi1tiyd\r\nhZ63Dg/WtrbHKb3l41fno4k7OYhRJONn3i/ThiHnzQrk\r\n-----END RSA PRIVATE KEY-----\r\n"
-)
-
 func TestSearch(t *testing.T) {
+	var (
+		uid = "e89acc53-6a5b-407f-8558-d574e82e5922"
+		sid = "de3432cb-38ef-4418-80ad-512693aebd55"
+		key = "-----BEGIN RSA PRIVATE KEY-----\r\nMIICXQIBAAKBgQCF4Ks6Vv7J99J3SOsAKmL3A+zwdFkQbZmNTiz3ucXhcyooMY+l\r\nmo7ks9ke421nXdPI6fJIykXCX8HffpsahhjWgBrD+SmfV8rjJpOlX7xydhr4h+7C\r\nJPxVnYGGW/elanzBjZba7p6zO4b3wlU/BEo60xiMrR9KGRvoKMu4ZawKewIDAQAB\r\nAoGACXEU4mJsSbYuo7cCy9oxbJZcSYELHvt7ztlqlnYFnKbQnFESfm1uEncUovcL\r\nKjUV0J+fNL7/OHwkYiy9p5s5eRvSndp1vOTdEenATXFs9wUg68mTlDYmAnzrXHWU\r\nO2BBf4NE4Zk6jIUFTg70KU0ReskgRcZAQAGjzS6sArvVd5ECQQD+Xj5AO1vPvFFg\r\nl4/FujnzAO1FTMKuxpglE4FxNnRR/cUbJHJeS8Whddo7FnWjIjwkTjM7wU7yt30T\r\nsy2j44l/AkEAhryKULbpjJnFIJYbC2tSNOXt4KHmHAb1P9US7u0Bb4Q0kThs4Lz0\r\nDPMlfV/IiTagDDm9HGbUKdY/vksWkCUlBQJBAJ6zvBElN8YnT3p9dVU/OFKV3HOl\r\nTb3v6BMR1WwGNpLFSwoBNl4A1oBDYHIHNEQg4vcf1zVMCW7D7oSxASPEng8CQGXz\r\nAaGjVcLKk4tdqScR1Mkr9buUJV6tsSLUohfhg8WSvofnrxK6RtwJmyNrt3yDtcSq\r\nZ7q23/CsKd1eSbtWL9UCQQDbF3h7A7lsMhvSOq5e0gGmJiKxLDeLbWnI6Yzac3oc\r\nhkaW2wzxgMRgSWH5yzvCbeiagOE/rm/mrPm019CcFUgC\r\n-----END RSA PRIVATE KEY-----\r\n"
+	)
+
 	ctx := context.Background()
-	data, err := SearchUser(ctx, "38451826", uid, sid, key)
+	data, err := SearchUser(ctx, "7000000016", uid, sid, key)
 	assert.Nil(t, err)
 	log.Println(string(data))
 
